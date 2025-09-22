@@ -53,12 +53,12 @@
                     </div>
                 </a>
                 
-                <!-- Project 2: Aree Website -->
+                <!-- === CORRECTED PROJECT LABEL === -->
                 <a href="https://dgkmills.github.io/Aree/" target="_blank" class="portfolio-panel">
                     <img src="../assets/images/areethumb.png" alt="Aree's Website" class="panel-image">
                     <div class="panel-content">
                         <div class="panel-details">
-                            <h3>Aree Website</h3>
+                            <h3>Aree's Website</h3>
                             <p>A personal site to empower a student with English and web development skills.</p>
                         </div>
                         <div class="panel-sidebar">
@@ -70,12 +70,12 @@
                     </div>
                 </a>
                 
-                <!-- Project 3: Teacher Dan Scheduler -->
+                <!-- === CORRECTED PROJECT LABEL === -->
                 <a href="https://dgkmills-schedule-tracker.web.app/#" target="_blank" class="portfolio-panel">
                     <img src="../assets/images/tdanthumb.png" alt="Teacher Dan's Scheduler Website" class="panel-image">
                     <div class="panel-content">
                         <div class="panel-details">
-                            <h3>Teacher Dan Scheduler</h3>
+                            <h3>Teacher Dan's Scheduler</h3>
                             <p>A professional tool to promote and market teaching services and manage scheduling.</p>
                         </div>
                         <div class="panel-sidebar">
@@ -106,6 +106,17 @@
             <p class="copyright">&copy; 2025 Site Mills. All rights reserved.</p>
         </footer>
     </div>
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
-

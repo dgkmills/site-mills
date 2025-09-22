@@ -31,30 +31,29 @@
             </nav>
         </header>
         
+        <!-- === MODIFIED HERO SECTION === -->
         <section class="hero">
             <div class="hero-text">
-                <h1>Site Mills: Crafting Digital Experiences</h1>
-                <p>We build compelling and engaging websites that captivate your target market. Your ideas, our expertise, to grow your business.</p>
+                <h1>Your Vision, Realized on the Web</h1>
+                <p>From stunning portfolios to powerful business tools, we craft fast, secure, and beautiful websites tailored to your unique goals. Let's build something that gets results.</p>
                 <a href="pages/contact.html" class="btn hero-btn">Get a Free Consultation</a>
-            </div>
-            <div class="hero-image">
-                <img src="assets/images/workflowdiagram.png" alt="A diagram showing a modern web development workflow">
             </div>
         </section>
 
         <h2 class="slideshow-header">Featured Projects</h2>
         <div class="slideshow-container">
+            <!-- === CORRECTED SLIDE LABELS === -->
             <div class="mySlides fade">
-                <img class="slide-image" src="assets/images/tdanthumb.png" alt="Tdanai Law Office website preview">
-                <div class="slide-caption">Tdanai Law Office</div>
+                <img class="slide-image" src="assets/images/tdanthumb.png" alt="Teacher Dan's Scheduler website preview">
+                <div class="slide-caption">Teacher Dan's Scheduler</div>
             </div>
             <div class="mySlides fade">
                 <img class="slide-image" src="assets/images/drkhathumb.png" alt="Dr. Kha's academic portfolio website preview">
                 <div class="slide-caption">Asst. Prof. Dr. Ketwalee Kositkanawuth</div>
             </div>
             <div class="mySlides fade">
-                <img class="slide-image" src="assets/images/areethumb.png" alt="Aree Homestay website preview">
-                <div class="slide-caption">Aree Homestay</div>
+                <img class="slide-image" src="assets/images/areethumb.png" alt="Aree's website preview">
+                <div class="slide-caption">Aree's Website</div>
             </div>
         </div>
         <div class="dot-container">
@@ -63,7 +62,6 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
 
-        <!-- Restored Sections -->
         <section class="services-section">
             <h2>Why Work With Us?</h2>
             <div class="service-cards">
@@ -105,6 +103,7 @@
         </footer>
     </div>
 
+    <!-- Slideshow Script -->
     <script>
         let slideIndex = 1;
         let slideInterval;
@@ -130,6 +129,18 @@
         }
         slideInterval = setInterval(() => plusSlides(1), 5000);
     </script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
-

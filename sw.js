@@ -1,3 +1,6 @@
+// This file replaces the old 'pwa-service-worker.js'
+// It should be placed in the root directory of your project.
+
 const CACHE_NAME = 'sitemills-cache-v1';
 const urlsToCache = [
     '/',
@@ -18,6 +21,7 @@ const urlsToCache = [
     '/assets/images/researchgeneratorscreenshot.png'
 ];
 
+// Install the service worker and cache the static assets
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -28,6 +32,7 @@ self.addEventListener('install', event => {
     );
 });
 
+// Serve cached content when offline
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
@@ -36,8 +41,8 @@ self.addEventListener('fetch', event => {
                 if (response) {
                     return response;
                 }
+                // If not in cache, fetch from the network
                 return fetch(event.request);
             })
     );
 });
-
