@@ -67,24 +67,35 @@ body {
 }
 
 /* Hero Section */
-.hero-section {
-    text-align: center;
-    padding: 80px 20px;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    gap: 40px;
 }
 
-.hero-content h1 {
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
     font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
     color: #2c3e50;
+    margin-bottom: 20px;
 }
 
-.hero-content p {
+.hero-text p {
     font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto 30px;
+    color: #555;
+    margin-bottom: 30px;
 }
 
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
 .hero-btn {
     background-color: #28a745;
@@ -125,9 +136,9 @@ body {
 
 .slide-image {
     width: 100%;
-    height: 400px; /* Standardized height */
-    object-fit: cover; /* Ensures image covers the area without distortion */
-    object-position: top; /* Focus on the top part of the images */
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
     display: block;
 }
 
@@ -140,7 +151,6 @@ body {
     font-weight: 600;
 }
 
-/* Dots */
 .dot-container {
   text-align: center;
   padding: 20px;
@@ -159,10 +169,9 @@ body {
 }
 
 .active, .dot:hover {
-  background-color: #007bff; /* Use site's primary color */
+  background-color: #007bff;
 }
 
-/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -173,6 +182,57 @@ body {
   to {opacity: 1}
 }
 
+/* Restored Homepage Sections */
+.services-section, .cta-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services-section h2, .cta-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-btn {
+    background-color: #007bff;
+    color: #fff;
+}
 
 /* Footer */
 .footer {
@@ -223,11 +283,21 @@ body {
     margin: 10px auto 40px;
 }
 
+/* Grid-based fix for portfolio panels */
 .portfolio-panels-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
+}
+@media (min-width: 768px) {
+    .portfolio-panels-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .portfolio-panels-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .portfolio-panel {
@@ -237,9 +307,10 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
     text-decoration: none;
     color: #333;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-panel:hover {
@@ -255,12 +326,14 @@ body {
 
 .panel-content {
     padding: 20px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    flex-grow: 1; /* Allows content to fill space */
 }
 .panel-details h3 {
     color: #007bff;
+    margin-top: 0;
 }
 
 .panel-sidebar {
@@ -269,32 +342,10 @@ body {
     padding-top: 15px;
 }
 
-/* Responsive widths for portfolio panels */
-@media (min-width: 768px) {
-    .portfolio-panel {
-        width: calc(50% - 10px);
-    }
-}
-
-@media (min-width: 1024px) {
-    .portfolio-panel {
-        width: calc(33.333% - 14px); 
-    }
-    .panel-content {
-        flex-direction: row;
-        gap: 20px;
-    }
-    .panel-details {
-        flex: 2;
-    }
-    .panel-sidebar {
-        flex: 1;
-        border-top: none;
-        border-left: 1px solid #eee;
-        margin-top: 0;
-        padding-top: 0;
-        padding-left: 20px;
-    }
+.panel-sidebar h4 {
+    font-size: 18px;
+    color: #4A4A4A;
+    margin-top: 0;
 }
 
 /* About Us Page Styling */
@@ -324,7 +375,7 @@ body {
 /* Brand Story Section */
 .brand-story-section {
     padding: 60px 0;
-    background-color: #f8f9fa; /* A subtle off-white background */
+    background-color: #f8f9fa;
     border-top: 1px solid #e9ecef;
     border-bottom: 1px solid #e9ecef;
 }
@@ -412,7 +463,7 @@ body {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Important for padding and width */
+    box-sizing: border-box;
     font-size: 16px;
 }
 
@@ -569,7 +620,7 @@ body {
 .testimonial-box {
     margin-top: 50px;
     padding: 30px;
-    background-color: #eaf4ff; /* Light blue background */
+    background-color: #eaf4ff;
     border-left: 5px solid #007bff;
     border-radius: 0 8px 8px 0;
 }
@@ -624,6 +675,15 @@ body {
         justify-content: center;
     }
     
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
     .about-us-content {
         flex-direction: column;
     }

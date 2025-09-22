@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Mills - Professional & Creative Web Development</title>
+    <title>Site Mills - Crafting Digital Experiences</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,24 +15,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="icon" href="/assets/images/favicon.ico">
     <link rel="manifest" href="/assets/js/manifest.json">
-    
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('assets/js/pwa-service-worker.js').then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          }).catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-        });
-      }
-    </script>
 </head>
 <body>
-    <!-- Main container for the website content -->
     <div class="main-container">
-
-        <!-- Header and Navigation -->
         <header class="header">
             <nav class="navigation">
                 <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Site Mills Logo"></a>
@@ -45,52 +30,40 @@
                 </div>
             </nav>
         </header>
-
-        <!-- Hero section with a welcoming message and call-to-action -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Crafting Digital Experiences for Your Audience</h1>
+        
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Site Mills: Crafting Digital Experiences</h1>
                 <p>We build compelling and engaging websites that captivate your target market. Your ideas, our expertise, to grow your business.</p>
                 <a href="pages/contact.html" class="btn hero-btn">Get a Free Consultation</a>
             </div>
-        </section>
-
-        <!-- Portfolio Slideshow Section -->
-        <section class="portfolio-slideshow-section">
-            <h2>A Glimpse Into Our Work</h2>
-            <div class="slideshow-container">
-                <!-- Slide 1 -->
-                <div class="slide fade">
-                    <a href="pages/portfolio.html" target="_blank">
-                        <img src="assets/images/drkhathumb.png" alt="Dr. Ketwalee's Professional Website" class="slide-image">
-                        <div class="slide-caption">Dr. Ketwalee Kositkanawuth’s Professional Website</div>
-                    </a>
-                </div>
-                <!-- Slide 2 -->
-                <div class="slide fade">
-                     <a href="pages/portfolio.html" target="_blank">
-                        <img src="assets/images/areethumb.png" alt="Aree’s Fun Page Thumbnail" class="slide-image">
-                        <div class="slide-caption">Aree’s Fun Page</div>
-                    </a>
-                </div>
-                <!-- Slide 3 -->
-                <div class="slide fade">
-                    <a href="pages/portfolio.html" target="_blank">
-                        <img src="assets/images/tdanthumb.png" alt="Teacher Dan's Website Thumbnail" class="slide-image">
-                        <div class="slide-caption">Teacher Dan's Professional Site</div>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- The dots/circles -->
-            <div class="dots-container">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
+            <div class="hero-image">
+                <img src="assets/images/workflowdiagram.png" alt="A diagram showing a modern web development workflow">
             </div>
         </section>
 
-        <!-- Services Section -->
+        <h2 class="slideshow-header">Featured Projects</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img class="slide-image" src="assets/images/tdanthumb.png" alt="Tdanai Law Office website preview">
+                <div class="slide-caption">Tdanai Law Office</div>
+            </div>
+            <div class="mySlides fade">
+                <img class="slide-image" src="assets/images/drkhathumb.png" alt="Dr. Kha's academic portfolio website preview">
+                <div class="slide-caption">Asst. Prof. Dr. Ketwalee Kositkanawuth</div>
+            </div>
+            <div class="mySlides fade">
+                <img class="slide-image" src="assets/images/areethumb.png" alt="Aree Homestay website preview">
+                <div class="slide-caption">Aree Homestay</div>
+            </div>
+        </div>
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Restored Sections -->
         <section class="services-section">
             <h2>Why Work With Us?</h2>
             <div class="service-cards">
@@ -109,21 +82,19 @@
             </div>
         </section>
 
-        <!-- Call-to-action section -->
         <section class="cta-section">
             <h2>Ready to Transform Your Online Presence?</h2>
             <p>Let's turn your ideas into a powerful digital reality. We're ready to build a custom website that engages and converts.</p>
             <a href="pages/contact.html" class="btn cta-btn">Start Your Project Today</a>
         </section>
 
-        <!-- Footer with contact information -->
         <footer class="footer">
             <div class="footer-content">
                 <div class="contact-info">
                     <h3>Contact Us</h3>
                     <p>Email: dgkmills@gmail.com</p>
                     <p>Phone: 086 333 1493</p>
-                    <p>Location: Bangkok, Thailand</p>
+                    <p>Location: Ban Pong, Thailand</p>
                 </div>
                 <div class="social-links">
                     <h3>Follow Us</h3>
@@ -136,50 +107,13 @@
 
     <script>
         let slideIndex = 1;
-        let slideInterval = setInterval(() => plusSlides(1), 5000); // Auto-play interval
-
-        document.addEventListener("DOMContentLoaded", function() {
-            showSlides(slideIndex);
-
-            // Swipe functionality for touch devices
-            const slideshow = document.querySelector('.slideshow-container');
-            let touchstartX = 0;
-            let touchendX = 0;
-
-            slideshow.addEventListener('touchstart', function(event) {
-                touchstartX = event.changedTouches[0].screenX;
-            }, false);
-
-            slideshow.addEventListener('touchend', function(event) {
-                touchendX = event.changedTouches[0].screenX;
-                handleSwipe();
-            }, false); 
-
-            function handleSwipe() {
-                if (touchendX < touchstartX) {
-                    plusSlides(1); // Swiped left
-                }
-                if (touchendX > touchstartX) {
-                    plusSlides(-1); // Swiped right
-                }
-            }
-        });
-
-        function plusSlides(n) {
-            clearInterval(slideInterval); // Reset interval on manual navigation
-            showSlides(slideIndex += n);
-            slideInterval = setInterval(() => plusSlides(1), 5000);
-        }
-
-        function currentSlide(n) {
-            clearInterval(slideInterval); // Reset interval on manual navigation
-            showSlides(slideIndex = n);
-            slideInterval = setInterval(() => plusSlides(1), 5000);
-        }
-
+        let slideInterval;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
         function showSlides(n) {
             let i;
-            let slides = document.getElementsByClassName("slide");
+            let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
@@ -191,7 +125,10 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => plusSlides(1), 5000); 
         }
+        slideInterval = setInterval(() => plusSlides(1), 5000);
     </script>
 </body>
 </html>
