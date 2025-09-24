@@ -483,7 +483,15 @@ body {
 }
 
 .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds space between checkbox and text */
     font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto; /* Overrides the 100% width from the general input style */
+    padding: 0; /* Removes unnecessary padding */
 }
 
 .submit-btn {
@@ -708,4 +716,3 @@ body {
         flex-direction: column;
     }
 }
-
