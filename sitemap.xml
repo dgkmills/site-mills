@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://site-mills.com/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/pages/about/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/pages/portfolio/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/blog/blog/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/pages/contact/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/blog/building-better-websites/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://site-mills.com/blog/say-goodbye-to-hosting-fees/</loc>
+    <lastmod>2025-09-29</lastmod>
+    <priority>0.64</priority>
+  </url>
+</urlset>
+
