@@ -1,7 +1,7 @@
 // This file replaces the old 'pwa-service-worker.js'
 // It should be placed in the root directory of your project.
 
-const CACHE_NAME = 'sitemills-cache-v1';
+const CACHE_NAME = 'sitemills-cache-v2'; // Bumped version to ensure new cache is created
 const urlsToCache = [
     '/',
     '/index.html',
@@ -18,7 +18,8 @@ const urlsToCache = [
     '/assets/images/android-chrome-512x512.png',
     '/assets/images/kmuttpagescreenshot.png',
     '/assets/images/newsitetopscreenshot.png',
-    '/assets/images/researchgeneratorscreenshot.png'
+    '/assets/images/researchgeneratorscreenshot.png',
+    '/assets/videos/pronunciationappintro.mp4' // Added the video to the cache list
 ];
 
 // Install the service worker and cache the static assets
@@ -30,6 +31,22 @@ self.addEventListener('install', event => {
                 return cache.addAll(urlsToCache);
             })
     );
+});
+
+// Activate event to clean up old caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(cacheName => {
+          return cacheName.startsWith('sitemills-cache-') &&
+                 cacheName !== CACHE_NAME;
+        }).map(cacheName => {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
 
 // Serve cached content when offline
