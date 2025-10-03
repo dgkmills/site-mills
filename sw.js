@@ -1,7 +1,7 @@
 // This file replaces the old 'pwa-service-worker.js'
 // It should be placed in the root directory of your project.
 
-const CACHE_NAME = 'sitemills-cache-v2'; // Bumped version to ensure new cache is created
+const CACHE_NAME = 'sitemills-cache-v2'; // This is correct
 const urlsToCache = [
     '/',
     '/index.html',
@@ -19,7 +19,7 @@ const urlsToCache = [
     '/assets/images/kmuttpagescreenshot.png',
     '/assets/images/newsitetopscreenshot.png',
     '/assets/images/researchgeneratorscreenshot.png',
-    '/assets/videos/pronunciationappintro.mp4' // Added the video to the cache list
+    '/assets/videos/pronunciationappintro.mp4' // This path is correct
 ];
 
 // Install the service worker and cache the static assets
@@ -63,3 +63,4 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
