@@ -2,122 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Site Mills</title>
+    <meta name="description" content="Contact Dan Mills for web development projects, collaborations, or inquiries.">
+    <meta name="author" content="Dan Mills">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danmills.dev/pages/contact.html">
+    <meta property="og:title" content="Contact | Dan Mills">
+    <meta property="og:description" content="Contact Dan Mills for web development projects, collaborations, or inquiries.">
+    <meta property="og:image" content="https://danmills.dev/assets/images/logowhiteback.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://danmills.dev/pages/contact.html">
+    <meta property="twitter:title" content="Contact | Dan Mills">
+    <meta property="twitter:description" content="Contact Dan Mills for web development projects, collaborations, or inquiries.">
+    <meta property="twitter:image" content="https://danmills.dev/assets/images/logowhiteback.png">
+
+    <title>Contact | Dan Mills</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- SEO Fix: Canonical Link -->
-    <link rel="canonical" href="https://site-mills.com/pages/contact/" />
-
-    <!-- Favicon and PWA Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="manifest" href="/assets/js/manifest.json">
 </head>
 <body>
-    <div class="main-container">
-        <header class="header">
-            <nav class="navigation">
-                <a href="/index.html" class="logo"><img src="../assets/images/logo.png" alt="Site Mills Logo"></a>
-                <div class="nav-links">
-                    <a href="/index.html" class="nav-item">Home</a>
-                    <a href="/pages/about.html" class="nav-item">About Us</a>
-                    <a href="/pages/portfolio.html" class="nav-item">Portfolio</a>
-                    <a href="/blog/blog.html" class="nav-item">Blog</a>
-                    <a href="/pages/contact.html" class="btn contact-btn">Contact Us</a>
-                </div>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="../blog/blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="contact-section">
-            <div class="contact-header">
-                <h1 style="text-align: center; font-size: 36px; color: #2c3e50;">Let's Build Something Great Together</h1>
-                <p style="text-align: center; max-width: 600px; margin: 10px auto 40px;">Tell us about your project, and we'll help you find the best solution to compel and engage your target audience. Fill out the form below to get started.</p>
-            </div>
-
-            <form class="contact-form" name="contact-form" method="POST" action="/pages/thank-you.html" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact-form" />
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="goal">What is the primary goal of your new website?</label>
-                    <select id="goal" name="goal" required>
-                        <option value="">Select a goal...</option>
-                        <option value="generate-leads">Generate leads for my business</option>
-                        <option value="sell-products">Sell products or services (E-commerce)</option>
-                        <option value="showcase-portfolio">Showcase my portfolio or creative work</option>
-                        <option value="provide-information">Provide information or serve as a digital brochure</option>
-                        <option value="build-community">Build an online community or blog</option>
-                        <option value="other">Other (please specify below)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="style">What style or tone do you prefer?</label>
-                    <select id="style" name="style" required>
-                        <option value="">Select a style...</option>
-                        <option value="professional">Professional</option>
-                        <option value="creative">Creative</option>
-                        <option value="minimalist">Minimalist</option>
-                        <option value="bold">Bold & Modern</option>
-                        <option value="friendly">Friendly & Welcoming</option>
-                        <option value="other">Other (please specify below)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="features">What key functions do you need? (e.g., Contact form, E-commerce, Blog, Gallery)</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="functions" value="contact-form"> Contact Form</label>
-                        <label><input type="checkbox" name="functions" value="e-commerce"> E-commerce</label>
-                        <label><input type="checkbox" name="functions" value="blog"> Blog</label>
-                        <label><input type="checkbox" name="functions" value="gallery"> Gallery</label>
-                        <label><input type="checkbox" name="functions" value="newsletter"> Newsletter/Sign-up</label>
-                        <label><input type="checkbox" name="functions" value="login"> User Login/Registration</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="additional-info">Additional Details (Optional):</label>
-                    <textarea id="additional-info" name="additional-info" rows="4" placeholder="Tell us more about your vision or specific needs."></textarea>
-                </div>
-                <button type="submit" class="btn submit-btn">Send My Project Details</button>
+    <main>
+        <section class="content-section">
+            <h1>Let's Get in Touch</h1>
+            <p>Have a quick question or a general inquiry? Use the simple form below. For detailed project proposals, please use the intake form.</p>
+            
+            <!-- Simple Contact Form -->
+            <form class="contact-form" name="simple-contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="simple-contact" />
+                <p>
+                    <label for="simple-name">Your Name:</label>
+                    <input type="text" id="simple-name" name="name" required />
+                </p>
+                <p>
+                    <label for="simple-email">Your Email:</label>
+                    <input type="email" id="simple-email" name="email" required />
+                </p>
+                <p>
+                    <label for="simple-message">Your Message:</label>
+                    <textarea id="simple-message" name="message" rows="6" required></textarea>
+                </p>
+                <p>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </p>
             </form>
+
+            <div class="intake-prompt">
+                <hr>
+                <p>Ready to start a detailed project?</p>
+                <button id="open-modal-btn" class="secondary-button">Open Project Intake Form</button>
+            </div>
         </section>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>Email: dan@site-mills.com</p>
-                    <p>Phone: 086 333 1493</p>
-                    <p>Location: Ban Pong, Thailand</p>
-                </div>
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <a href="https://github.com/dgkmills" class="social-icon">GitHub</a>
-                </div>
+        <!-- The Modal for the detailed intake form -->
+        <div id="intake-modal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Project Intake Form</h2>
+                <p>Please provide as much detail as possible so I can get a clear understanding of your vision.</p>
+                <form class="contact-form" name="client-intake" method="POST" action="/pages/thank-you.html" data-netlify="true">
+                     <input type="hidden" name="form-name" value="client-intake" />
+                    <p>
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required />
+                    </p>
+                    <p>
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required />
+                    </p>
+                    <p>
+                        <label for="project-type">What type of project are you interested in?</label>
+                        <select name="project-type" id="project-type">
+                            <option value="new-website">New Website</option>
+                            <option value="website-redesign">Website Redesign</option>
+                            <option value="web-app">Web Application</option>
+                            <option value="consulting">Consulting / Tutoring</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="timeline">What is your ideal timeline?</label>
+                        <input type="text" id="timeline" name="timeline" />
+                    </p>
+                     <p>
+                        <label for="budget">What is your approximate budget?</label>
+                        <input type="text" id="budget" name="budget" />
+                    </p>
+                    <p>
+                        <label for="message">Tell me a little about your project:</label>
+                        <textarea id="message" name="message" rows="8" required placeholder="Describe your goals, target audience, and any specific features you have in mind."></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" class="cta-button">Submit Inquiry</button>
+                    </p>
+                </form>
             </div>
-            <p class="copyright">&copy; 2025 Site Mills. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
+    </footer>
+
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
+        // Get the modal elements
+        const modal = document.getElementById('intake-modal');
+        const openBtn = document.getElementById('open-modal-btn');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // When the user clicks the button, open the modal 
+        openBtn.onclick = function() {
+            modal.style.display = 'flex';
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>

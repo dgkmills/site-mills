@@ -3,180 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Site Mills</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- SEO Fix: Canonical Link -->
-    <link rel="canonical" href="https://site-mills.com/pages/portfolio/" />
+    <title>Portfolio - Dan Mills</title>
+    <meta name="description" content="The web development portfolio of Dan Mills, showcasing a range of projects from professional client websites to modern web applications and tools.">
 
-    <!-- Favicon and PWA Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="manifest" href="/assets/js/manifest.json">
+    <link rel="canonical" href="https://danmills.dev/pages/portfolio.html" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="main-container">
-        <header class="header">
-            <nav class="navigation">
-                <a href="/index.html" class="logo"><img src="../assets/images/logo.png" alt="Site Mills Logo"></a>
-                <div class="nav-links">
-                    <a href="/index.html" class="nav-item">Home</a>
-                    <a href="/pages/about.html" class="nav-item">About Us</a>
-                    <a href="/pages/portfolio.html" class="nav-item">Portfolio</a>
-                    <a href="/blog/blog.html" class="nav-item">Blog</a>
-                    <a href="/pages/contact.html" class="btn contact-btn">Contact Us</a>
-                </div>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="../blog/blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="portfolio-section">
-            <h1 class="portfolio-header">Our Work Speaks for Itself</h1>
-            <p class="portfolio-subheader">A showcase of projects where we turned creative ideas into compelling digital experiences.</p>
-            
-            <h2 class="portfolio-header" style="font-size: 28px; margin-top: 40px;">Professional Sites</h2>
-            <div class="portfolio-panels-container">
-                <!-- Project 1: Dr. Ketwalee Kositkanawuth’s Professional Website -->
-                <a href="https://drkha.site-mills.com" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/drkhathumb.png" alt="Dr. Ketwalee's Professional Website" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Asst. Prof. Dr. Ketwalee Kositkanawuth</h3>
-                            <p>KMUTT Assistant Professor’s Professional Site</p>
+    <main>
+        <section class="content-section portfolio-container">
+            <h2>My Work</h2>
+            <p class="portfolio-intro">
+                Here's a selection of projects that showcase my skills in web development, design, and user experience. From professional client sites to personal tools, each project reflects a commitment to quality and modern standards.
+            </p>
+            <div class="portfolio-grid">
+                <!-- Stock Tool Project -->
+                <div class="portfolio-card fade-in">
+                    <img src="../assets/images/stock-tool-thumbnail.svg" alt="Stock Tracker Tool project thumbnail." class="portfolio-image">
+                    <div class="card-content">
+                        <h3>Stock Tracker Tool</h3>
+                        <p>A web-based application for tracking stock prices and performance in real-time, built with a focus on data visualization and user experience.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
                         </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> Facilitate professional networking and convert interested students into graduate research students.</p>
-                            <p><strong>Style:</strong> Professional</p>
-                            <p><strong>Functions:</strong> Streamlined publications section, professional contact form.</p>
-                        </div>
+                        <a href="https://stocktool.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                </a>
+                </div>
+
+                <!-- Teacher Dan Project -->
+                <div class="portfolio-card fade-in">
+                    <img src="../assets/images/tdanthumb.png" alt="Teacher Dan project thumbnail." class="portfolio-image">
+                    <div class="card-content">
+                        <h3>My Teacher Dan</h3>
+                        <p>A professional scheduling and information site for an English teacher, featuring a clean interface and easy navigation for students and parents.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="https://myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Matt's World Project -->
+                <div class="portfolio-card fade-in">
+                    <img src="../assets/images/mattsworld-thumb.png" alt="Matt's World project thumbnail." class="portfolio-image">
+                    <div class="card-content">
+                        <h3>Matt's World</h3>
+                        <p>A fun, interactive educational site for a young student, designed to be engaging and easy for a child to explore and learn.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://mattsworld.myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
                 
-                <!-- Project 3: Teacher Dan's Scheduler -->
-                <a href="https://schedule.dgkmills.com" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/tdanthumb.png" alt="Teacher Dan's Scheduler Website" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Teacher Dan's Scheduler</h3>
-                            <p>A professional tool to promote and market teaching services and manage scheduling.</p>
+                <!-- Dialogue Tool Project -->
+                <div class="portfolio-card fade-in">
+                    <img src="../assets/images/dialogue-thumb.png" alt="Dialogue Generation Tool project thumbnail." class="portfolio-image">
+                    <div class="card-content">
+                        <h3>Dialogue Generation Tool</h3>
+                        <p>An AI-powered tool that assists users in generating natural-sounding dialogues for various scenarios, powered by the Gemini API.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Gemini API</span>
                         </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> Notify public of availability, market services, and drive clients to schedule appointments.</p>
-                            <p><strong>Style:</strong> Clean and professional</p>
-                            <p><strong>Functions:</strong> Scheduler and class package tracker.</p>
-                        </div>
+                        <a href="https://dialogue.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                </a>
+                </div>
+
+                <!-- Pronunciation Tool Project -->
+                <div class="portfolio-card fade-in">
+                    <img src="../assets/images/pronunciation-thumb.png" alt="Pronunciation Tool project thumbnail." class="portfolio-image">
+                    <div class="card-content">
+                        <h3>Pronunciation Tool</h3>
+                        <p>A utility that leverages AI to help language learners practice and perfect their pronunciation by providing feedback and examples.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Gemini API</span>
+                        </div>
+                        <a href="https://pronunciation.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
             </div>
-
-            <h2 class="portfolio-header" style="font-size: 28px; margin-top: 40px;">Student Sites</h2>
-            <div class="portfolio-panels-container">
-                <!-- Project 2: Aree's Website -->
-                <a href="https://dgkmills.github.io/Aree/" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/areethumb.png" alt="Aree's Website" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Aree's Website</h3>
-                            <p>A personal site to empower a student with English and web development skills.</p>
-                        </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> Grow student’s interest in web development.</p>
-                            <p><strong>Style:</strong> Chosen and adjusted by student</p>
-                            <p><strong>Functions:</strong> None currently</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- NEW Project 5: Matt's World -->
-                <a href="http://mattsworld.dgkmills.com/" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/mattsworld-thumb.png" alt="Matt's World Website" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Matt's World</h3>
-                            <p>A personal website project for a young web developer.</p>
-                        </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> To create a fun, personal space on the web and practice development skills.</p>
-                            <p><strong>Style:</strong> Creative & Personal</p>
-                            <p><strong>Functions:</strong> A personal blog and project showcase.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <h2 class="portfolio-header" style="font-size: 28px; margin-top: 40px;">Web Tools</h2>
-            <div class="portfolio-panels-container">
-                <!-- NEW Project 4: Dialogue Generation Tool -->
-                <a href="https://dialogue.site-mills.com/" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/dialogue-thumb.png" alt="Dialogue Generation & Scripting Tool" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Dialogue Generation & Scripting Tool</h3>
-                            <p>An AI-powered tool to create multi-speaker audio from custom scripts.</p>
-                        </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> Provide a tool for generating and scripting two-person dialogues for text-to-speech conversion.</p>
-                            <p><strong>Style:</strong> Functional & Clean</p>
-                            <p><strong>Functions:</strong> AI script generation, multi-speaker TTS audio creation, session management.</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- NEW Project: Pronunciation Tool -->
-                <a href="https://pronunciation.site-mills.com" target="_blank" class="portfolio-panel">
-                    <img src="../assets/images/pronunciation-thumb.png" alt="Pronunciation Practice Tool" class="panel-image">
-                    <div class="panel-content">
-                        <div class="panel-details">
-                            <h3>Pronunciation Practice Tool</h3>
-                            <p>An interactive tool for improving English pronunciation with real-time feedback.</p>
-                        </div>
-                        <div class="panel-sidebar">
-                            <h4>Project Details</h4>
-                            <p><strong>Goal:</strong> Provide a simple, effective way for language learners to practice and check their pronunciation of English words.</p>
-                            <p><strong>Style:</strong> Minimalist & Functional</p>
-                            <p><strong>Functions:</strong> Speech recognition, text-to-speech, and visual feedback.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
         </section>
+    </main>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>Email: dan@site-mills.com</p>
-                    <p>Phone: 086 333 1493</p>
-                    <p>Location: Ban Pong, Thailand</p>
-                </div>
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <a href="https://github.com/dgkmills" class="social-icon">GitHub</a>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2025 Site Mills. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
+    </footer>
+    
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
+        }, { threshold: 0.1 }); 
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
+

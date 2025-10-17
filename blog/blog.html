@@ -3,118 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Site Mills</title>
+    <title>Blog - Dan Mills</title>
+    <meta name="description" content="A collection of articles and insights on modern web development, UI/UX design, and technology from Dan Mills.">
+
+    <link rel="canonical" href="https://danmills.dev/blog/blog.html" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- SEO Fix: Canonical Link -->
-    <link rel="canonical" href="https://site-mills.com/blog/blog/" />
-
-    <!-- Favicon and PWA Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" href="/assets/images/favicon.ico">
-    <link rel="manifest" href="/assets/js/manifest.json">
 </head>
 <body>
-    <div class="main-container">
-        <header class="header">
-            <nav class="navigation">
-                <a href="/index.html" class="logo"><img src="../assets/images/logo.png" alt="Site Mills Logo"></a>
-                <div class="nav-links">
-                    <a href="/index.html" class="nav-item">Home</a>
-                    <a href="/pages/about.html" class="nav-item">About Us</a>
-                    <a href="/pages/portfolio.html" class="nav-item">Portfolio</a>
-                    <a href="/blog/blog.html" class="nav-item">Blog</a>
-                    <a href="/pages/contact.html" class="btn contact-btn">Contact Us</a>
-                </div>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="blog-list-section">
-            <h1 class="blog-header">Our Insights & Guides</h1>
-            <p class="blog-subheader">A collection of articles and videos on web development, strategy, and design to help you grow your business.</p>
-
+    <main>
+        <section class="content-section blog-container">
+            <h2>From the Keyboard</h2>
+            <p class="portfolio-intro">A collection of articles and insights on modern web development, UI/UX design, and the ever-evolving tech landscape.
+            </p>
             <div class="blog-grid">
-                <!-- Blog Post 1: Article -->
-                <div class="blog-post-card">
-                    <img src="../assets/images/workflowdiagram.png" alt="Website Development Workflow" class="blog-image">
-                    <div class="post-content">
-                        <h2>Building Better Websites, Together</h2>
-                        <p>Learn about our modern, collaborative process to build websites that are fast, secure, and uniquely yours.</p>
-                        <a href="/blog/building-better-websites.html" class="read-more-link">Read Article</a>
-                    </div>
-                </div>
-                
-                <!-- New Blog Post 2: Serverless -->
-                <div class="blog-post-card">
-                    <img src="../assets/images/serverlessway.png" alt="A diagram showing a modern serverless architecture." class="blog-image">
-                    <div class="post-content">
-                        <h2>Say Goodbye to Hosting Fees</h2>
-                        <p>Discover how modern serverless websites can be faster, more secure, and eliminate monthly hosting costs entirely.</p>
-                        <a href="/blog/say-goodbye-to-hosting-fees.html" class="read-more-link">Read Article</a>
+                <!-- New UI/UX Post Card -->
+                <div class="blog-card fade-in">
+                    <img src="../assets/images/ui-ux-thumbnail.svg" alt="Abstract image representing user interface and user experience design." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>A Developer's Take on UI/UX</h3>
+                        <p>An exploration of how thoughtful UI/UX design, combined with modern technology, leads to superior websites that achieve business goals.</p>
+                        <a href="./ui-ux-deep-dive.html" class="cta-button">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Post 3: "What is Jamstack?" Video -->
-                <div class="blog-post-card">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YfCSzyNrKwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <div class="post-content">
-                        <h2>What is Jamstack in 60 Seconds?</h2>
-                        <p>Get a quick, clear explanation of the Jamstack architecture and and understand why it's the secret to building faster, more secure websites. This video breaks it down in under a minute.</p>
-                        <a href="https://youtu.be/YfCSzyNrKwE" target="_blank" class="read-more-link">Watch on YouTube</a>
+                <!-- Say Goodbye to Hosting Fees Card -->
+                <div class="blog-card fade-in">
+                    <img src="../assets/images/serverlessway.png" alt="Diagram of a modern serverless architecture." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>Say Goodbye to Hosting Fees</h3>
+                        <p>Discover how modern, serverless websites can be faster, more secure, and dramatically more affordable for your business.</p>
+                        <a href="./Say-Goodbye-to-Hosting-Fees.html" class="cta-button">Read More</a>
                     </div>
                 </div>
 
-                <!-- Blog Post 4: PWA Offline Video Test -->
-                <div class="blog-post-card">
-                    <div class="video-container">
-                        <video controls style="width:100%; height:auto; border-radius: 8px;">
-                            <source src="/assets/videos/pronunciationappintro.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="post-content">
-                        <h2>Test of PWA Offline Video</h2>
-                        <p>This video is a test of the Progressive Web App's offline capabilities. Once the PWA is installed and the video is cached, it should be viewable without an internet connection.</p>
+                <!-- Building Better Websites (Original) Card -->
+                <div class="blog-card fade-in">
+                    <img src="../assets/images/workflowdiagram.png" alt="Workflow diagram showing the process of building a website." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>Building Better Websites</h3>
+                        <p>My original post on the foundational principles of the web development process, from initial idea to final deployment.</p>
+                        <a href="./building-better-websites.html" class="cta-button">Read More</a>
                     </div>
                 </div>
-
             </div>
         </section>
+    </main>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>Email: dan@site-mills.com</p>
-                    <p>Phone: 086 333 1493</p>
-                    <p>Location: Ban Pong, Thailand</p>
-                </div>
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <a href="https://github.com/dgkmills" class="social-icon">GitHub</a>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2025 Site Mills. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
+    </footer>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
+        }, { threshold: 0.1 }); 
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
