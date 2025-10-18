@@ -7,37 +7,42 @@
 
 <url>
   <loc>https://danmills.dev/index.html</loc>
-  <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+  <lastmod>2025-10-18T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://danmills.dev/pages/about.html</loc>
-  <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+  <lastmod>2025-10-18T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://danmills.dev/pages/portfolio.html</loc>
-  <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+  <lastmod>2025-10-18T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://danmills.dev/pages/contact.html</loc>
-  <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+  <lastmod>2025-10-18T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
     <loc>https://danmills.dev/blog/blog.html</loc>
-    <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+    <lastmod>2025-10-18T00:00:00+00:00</lastmod>
     <priority>0.80</priority>
 </url>
 <url>
-    <loc>https://danmills.dev/blog/building-better-websites.html</loc>
-    <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+    <loc>https://danmills.dev/blog/ui-ux-deep-dive.html</loc>
+    <lastmod>2025-10-18T00:00:00+00:00</lastmod>
     <priority>0.60</priority>
 </url>
 <url>
     <loc>https://danmills.dev/blog/Say-Goodbye-to-Hosting-Fees.html</loc>
-    <lastmod>2024-03-24T09:20:13+00:00</lastmod>
+    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
+    <priority>0.60</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/blog/building-better-websites.html</loc>
+    <lastmod>2025-09-28T00:00:00+00:00</lastmod>
     <priority>0.60</priority>
 </url>
 </urlset>

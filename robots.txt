@@ -1,1 +1,4 @@
-Allow all web crawlers to access all contentUser-agent: *Disallow:Sitemap: https://www.google.com/search?q=https://danmills.dev/sitemap.xml
+User-agent: *
+Disallow:
+
+Sitemap: https://danmills.dev/sitemap.xml
