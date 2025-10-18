@@ -7,12 +7,17 @@
     <meta name="description" content="Dan Mills - Crafting digital experiences. Specializing in modern web development, UI/UX design, and seamless integration.">
     <meta name="author" content="Dan Mills">
     
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#1e1e1e">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://danmills.dev/">
     <meta property="og:title" content="Dan Mills | Modern Web Development">
     <meta property="og:description" content="Dan Mills - Crafting digital experiences. Specializing in modern web development, UI/UX design, and seamless integration.">
     <meta property="og:image" content="https://danmills.dev/assets/images/logowhiteback.png">
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://danmills.dev/">
     <meta property="twitter:title" content="Dan Mills | Modern Web Development">
@@ -21,6 +26,10 @@
 
     <title>Dan Mills | Modern Web Development</title>
     
+    <!-- PWA Manifest Link -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
@@ -111,6 +120,17 @@
     <script src="./assets/js/particles-config.js"></script>
 
     <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
         // Fade-in animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -160,4 +180,3 @@
     </script>
 </body>
 </html>
-
