@@ -1,8 +1,7 @@
 // A unique name for the cache
-const CACHE_NAME = 'danmills-portfolio-cache-v2';
+const CACHE_NAME = 'danmills-portfolio-cache-v3';
 
 // The list of files to cache on service worker installation
-// I've removed the paths that were causing errors (missing files)
 const urlsToCache = [
   '/',
   '/index.html',
@@ -14,14 +13,12 @@ const urlsToCache = [
   '/blog/Say-Goodbye-to-Hosting-Fees.html',
   '/blog/building-better-websites.html',
   '/assets/css/style.css',
-  // This file is loaded from a CDN, so we don't need to pre-cache it from a local path
-  // '/assets/js/particles.min.js', 
   '/assets/js/particles-config.js',
   '/assets/images/logo.png',
   '/assets/images/danmillsheadshot.jpg',
-  // The following two SVG files were causing errors as they were either missing or empty.
-  // '/assets/images/ui-ux-thumbnail.svg',
-  // '/assets/images/stock-tool-thumbnail.svg',
+  // Add correct image paths to the cache
+  '/assets/images/stocktoolthumb.png',
+  '/assets/images/ui-ux-thumbnail.png',
   // Caching third-party resources is a good practice for performance
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
   'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'
