@@ -200,8 +200,6 @@ nav .nav-links ul li a:hover::after {
     background-color: var(--primary-color);
     color: #000;
     box-shadow: 0 4px 6px var(--shadow-color);
-    margin-top: auto;
-    align-self: flex-start;
 }
 
 .cta-button:hover {
@@ -219,6 +217,21 @@ nav .nav-links ul li a:hover::after {
 .secondary-button:hover {
     background-color: var(--secondary-color);
     color: #000;
+}
+
+.secondary-button.view-details {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    text-transform: none;
+    border-width: 1px;
+    background: var(--surface-color);
+    color: var(--on-surface-secondary-color);
+    border-color: var(--border-color);
+}
+
+.secondary-button.view-details:hover {
+    background: var(--bg-color);
+    color: var(--on-surface-color);
 }
 
 
@@ -335,6 +348,17 @@ nav .nav-links ul li a:hover::after {
     border-radius: 12px;
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+.button-group {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.button-group .cta-button {
+    margin-top: 0;
 }
 
 

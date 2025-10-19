@@ -8,24 +8,24 @@
 
     <link rel="canonical" href="https://danmills.dev/pages/portfolio.html" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <a href="/index.html" class="logo-link"><img src="/assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
              <div class="nav-links">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./portfolio.html">Portfolio</a></li>
-                    <li><a href="../blog/blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="/blog/blog.html">Blog</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="hamburger-menu">
@@ -45,7 +45,7 @@
             <div class="portfolio-grid">
                 <!-- Stock Tool Project -->
                 <div class="portfolio-card fade-in">
-                    <img src="../assets/images/stocktoolthumb.png" alt="Stock Tracker Tool project thumbnail." class="portfolio-image">
+                    <img src="/assets/images/stocktoolthumb.png" alt="Stock Tracker Tool project thumbnail." class="portfolio-image">
                     <div class="card-content">
                         <h3>Stock Tracker Tool</h3>
                         <p>A web-based application for tracking stock prices and performance in real-time, built with a focus on data visualization and user experience.</p>
@@ -55,13 +55,16 @@
                             <span>JavaScript</span>
                             <span>Chart.js</span>
                         </div>
-                        <a href="./project-stock-tool.html" class="cta-button">View Details</a>
+                        <div class="button-group">
+                            <a href="https://stocktool.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/pages/project-stock-tool.html" class="secondary-button view-details">View Details</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Teacher Dan Project -->
                 <div class="portfolio-card fade-in">
-                    <img src="../assets/images/tdanthumb.png" alt="Teacher Dan project thumbnail." class="portfolio-image">
+                    <img src="/assets/images/tdanthumb.png" alt="Teacher Dan project thumbnail." class="portfolio-image">
                     <div class="card-content">
                         <h3>My Teacher Dan</h3>
                         <p>A professional scheduling and information site for an English teacher, featuring a clean interface and easy navigation for students and parents.</p>
@@ -71,13 +74,16 @@
                             <span>JavaScript</span>
                             <span>Firebase</span>
                         </div>
-                        <a href="https://myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <div class="button-group">
+                            <a href="https://myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/pages/project-teacher-dan.html" class="secondary-button view-details">View Details</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Matt's World Project -->
                 <div class="portfolio-card fade-in">
-                    <img src="../assets/images/mattsworld-thumb.png" alt="Matt's World project thumbnail." class="portfolio-image">
+                    <img src="/assets/images/mattsworld-thumb.png" alt="Matt's World project thumbnail." class="portfolio-image">
                     <div class="card-content">
                         <h3>Matt's World</h3>
                         <p>A fun, interactive educational site for a young student, designed to be engaging and easy for a child to explore and learn.</p>
@@ -86,13 +92,16 @@
                             <span>CSS</span>
                             <span>JavaScript</span>
                         </div>
-                        <a href="https://mattsworld.myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <div class="button-group">
+                            <a href="https://mattsworld.myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/pages/project-matts-world.html" class="secondary-button view-details">View Details</a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Dialogue Tool Project -->
                 <div class="portfolio-card fade-in">
-                    <img src="../assets/images/dialogue-thumb.png" alt="Dialogue Generation Tool project thumbnail." class="portfolio-image">
+                    <img src="/assets/images/dialogue-thumb.png" alt="Dialogue Generation Tool project thumbnail." class="portfolio-image">
                     <div class="card-content">
                         <h3>Dialogue Generation Tool</h3>
                         <p>An AI-powered tool that assists users in generating natural-sounding dialogues for various scenarios, powered by the Gemini API.</p>
@@ -102,13 +111,16 @@
                             <span>JavaScript</span>
                             <span>Gemini API</span>
                         </div>
-                        <a href="https://dialogue.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <div class="button-group">
+                            <a href="https://dialogue.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/pages/project-dialogue-tool.html" class="secondary-button view-details">View Details</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Pronunciation Tool Project -->
                 <div class="portfolio-card fade-in">
-                    <img src="../assets/images/pronunciation-thumb.png" alt="Pronunciation Tool project thumbnail." class="portfolio-image">
+                    <img src="/assets/images/pronunciation-thumb.png" alt="Pronunciation Tool project thumbnail." class="portfolio-image">
                     <div class="card-content">
                         <h3>Pronunciation Tool</h3>
                         <p>A utility that leverages AI to help language learners practice and perfect their pronunciation by providing feedback and examples.</p>
@@ -118,7 +130,10 @@
                             <span>JavaScript</span>
                             <span>Gemini API</span>
                         </div>
-                        <a href="https://pronunciation.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <div class="button-group">
+                            <a href="https://pronunciation.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Site <i class="fas fa-external-link-alt"></i></a>
+                            <a href="/pages/project-pronunciation-tool.html" class="secondary-button view-details">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +144,7 @@
         <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
     </footer>
     
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
 
