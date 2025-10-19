@@ -19,13 +19,20 @@
     <header>
         <nav>
             <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./portfolio.html">Portfolio</a></li>
-                <li><a href="../blog/blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+             <div class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="../blog/blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -48,7 +55,7 @@
                             <span>JavaScript</span>
                             <span>Chart.js</span>
                         </div>
-                        <a href="https://stocktool.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <a href="./project-stock-tool.html" class="cta-button">View Details</a>
                     </div>
                 </div>
 
@@ -122,18 +129,7 @@
         <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
     </footer>
     
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
+

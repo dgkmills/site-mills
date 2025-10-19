@@ -42,13 +42,20 @@
     <header>
         <nav>
             <a href="index.html" class="logo-link"><img src="./assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./pages/about.html">About</a></li>
-                <li><a href="./pages/portfolio.html">Portfolio</a></li>
-                <li><a href="./blog/blog.html">Blog</a></li>
-                <li><a href="./pages/contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./pages/about.html">About</a></li>
+                    <li><a href="./pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="./blog/blog.html">Blog</a></li>
+                    <li><a href="./pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -81,6 +88,40 @@
                     <p>I build and integrate robust back-end functionalities, ensuring your application is scalable, secure, and runs efficiently.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="featured-posts">
+            <h2>From the Blog</h2>
+            <div class="blog-grid">
+                <!-- Featured Post 1 -->
+                <div class="blog-card fade-in">
+                    <img src="./assets/images/ui-ux-thumbnail.png" alt="Abstract image representing user interface and user experience design." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>A Developer's Take on UI/UX</h3>
+                        <p>An exploration of how thoughtful UI/UX design leads to superior websites that achieve business goals.</p>
+                        <a href="./blog/ui-ux-deep-dive.html" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                <!-- Featured Post 2 -->
+                <div class="blog-card fade-in">
+                    <img src="./assets/images/serverlessway.png" alt="Diagram of a modern serverless architecture." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>Say Goodbye to Hosting Fees</h3>
+                        <p>Discover how modern, serverless websites can be faster, more secure, and dramatically more affordable.</p>
+                        <a href="./blog/Say-Goodbye-to-Hosting-Fees.html" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                <!-- Featured Post 3 -->
+                <div class="blog-card fade-in">
+                    <img src="./assets/images/workflowdiagram.png" alt="Workflow diagram showing the process of building a website." class="blog-card-image">
+                    <div class="card-content">
+                        <h3>Building Better Websites</h3>
+                        <p>My original post on the foundational principles of the web development process, from idea to deployment.</p>
+                        <a href="./blog/building-better-websites.html" class="cta-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+             <a href="./blog/blog.html" class="cta-button" style="display: table; margin: 2rem auto 0;">View All Posts</a>
         </section>
     </main>
 
@@ -118,65 +159,7 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./assets/js/particles-config.js"></script>
+    <script src="./assets/js/main.js"></script>
 
-    <script>
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-
-        // Fade-in animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Modal functionality
-        const serviceCards = document.querySelectorAll('[data-modal-target]');
-        const closeButtons = document.querySelectorAll('.modal-overlay .close-btn');
-        const modalOverlays = document.querySelectorAll('.modal-overlay');
-
-        serviceCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.getAttribute('data-modal-target');
-                const modal = document.getElementById(modalId);
-                modal.style.display = 'flex';
-            });
-        });
-
-        const closeModal = (modal) => {
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        };
-
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                closeModal(button.closest('.modal-overlay'));
-            });
-        });
-
-        modalOverlays.forEach(overlay => {
-            overlay.addEventListener('click', (event) => {
-                if (event.target === overlay) {
-                    closeModal(overlay);
-                }
-            });
-        });
-
-    </script>
 </body>
 </html>

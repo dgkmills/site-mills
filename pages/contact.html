@@ -34,13 +34,20 @@
     <header>
         <nav>
             <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./portfolio.html">Portfolio</a></li>
-                <li><a href="../blog/blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="../blog/blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -125,30 +132,6 @@
     <footer>
         <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
     </footer>
-
-    <script>
-        // Get the modal elements
-        const modal = document.getElementById('intake-modal');
-        const openBtn = document.getElementById('open-modal-btn');
-        const closeBtn = document.querySelector('.close-btn');
-
-        // When the user clicks the button, open the modal 
-        openBtn.onclick = function() {
-            modal.style.display = 'flex';
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
-        }
-
-        // When the user clicks anywhere outside of the modal content, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
-

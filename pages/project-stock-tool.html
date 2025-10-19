@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker Tool - Dan Mills Portfolio</title>
+    <meta name="description" content="A detailed look at the Stock Tracker Tool project, showcasing data visualization and user experience design.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo-link"><img src="../assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="../blog/blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section project-detail">
+            <h1>Stock Tracker Tool</h1>
+            <img src="../assets/images/stocktoolthumb.png" alt="Stock Tracker Tool project thumbnail." class="project-detail-image">
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Full-Stack Developer & UI/UX Designer
+                </div>
+                <div class="meta-item">
+                    <strong>Technologies:</strong> HTML, CSS, JavaScript, Chart.js, Finnhub API
+                </div>
+                <div class="meta-item">
+                     <a href="https://stocktool.danmills.dev" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <h2>The Challenge</h2>
+            <p>The goal was to create a clean, user-friendly dashboard for monitoring real-time stock prices. Many existing tools were either cluttered with excessive data or locked behind a paywall. The challenge was to present key financial information in a way that was both easy to understand at a glance and visually appealing.</p>
+
+            <h2>My Solution</h2>
+            <p>I developed a single-page application using vanilla JavaScript to fetch data from the Finnhub API. The interface was designed to be minimalist and intuitive, using cards to display information for each stock. For data visualization, I integrated Chart.js to create simple but effective historical price charts, allowing users to quickly assess a stock's performance over time.</p>
+            <p>The application is fully responsive, ensuring a seamless experience on both desktop and mobile devices. The focus was on performance and simplicity, providing users with the essential data they need without overwhelming them.</p>
+            
+            <a href="./portfolio.html" class="back-to-blog">&larr; Back to Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
