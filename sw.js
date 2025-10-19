@@ -1,5 +1,5 @@
 // A unique name for the cache
-const CACHE_NAME = 'danmills-portfolio-cache-v3';
+const CACHE_NAME = 'danmills-portfolio-cache-v4';
 
 // The list of files to cache on service worker installation
 const urlsToCache = [
@@ -19,6 +19,8 @@ const urlsToCache = [
   // Add correct image paths to the cache
   '/assets/images/stocktoolthumb.png',
   '/assets/images/ui-ux-thumbnail.png',
+  '/assets/images/user-centric-design-loop.png',
+  '/assets/images/wireframe-to-final-product.png',
   // Caching third-party resources is a good practice for performance
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
   'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'
@@ -84,3 +86,4 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
