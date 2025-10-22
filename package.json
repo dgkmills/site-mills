@@ -1,0 +1,12 @@
+{
+  "name": "danmills-portfolio-builder",
+  "version": "1.0.0",
+  "description": "Dependencies for Netlify build process (screenshots).",
+  "main": "screenshot.js",
+  "scripts": {
+    "screenshot": "node screenshot.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
