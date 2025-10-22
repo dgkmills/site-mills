@@ -1,5 +1,5 @@
 // A unique name for the cache
-const CACHE_NAME = 'danmills-portfolio-cache-v6';
+const CACHE_NAME = 'danmills-portfolio-cache-v7'; // Increased cache version
 
 // The list of files to cache on service worker installation
 const urlsToCache = [
@@ -12,6 +12,11 @@ const urlsToCache = [
   '/blog/ui-ux-deep-dive.html',
   '/blog/Say-Goodbye-to-Hosting-Fees.html',
   '/blog/building-better-websites.html',
+  
+  // New Project Detail Pages
+  '/pages/project-almanac.html',
+  '/pages/project-email-assist.html',
+  
   '/assets/css/style.css',
   '/assets/js/particles-config.js',
   '/assets/images/logo.png',
@@ -75,4 +80,3 @@ self.addEventListener('activate', event => {
     })
   );
 });
-
