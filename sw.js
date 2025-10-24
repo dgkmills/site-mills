@@ -1,82 +1,97 @@
-// A unique name for the cache
-const CACHE_NAME = 'danmills-portfolio-cache-v7'; // Increased cache version
+// This is your service worker file.
 
-// The list of files to cache on service worker installation
+const CACHE_NAME = 'danmills-portfolio-cache-v2'; // Incremented cache version
 const urlsToCache = [
   '/',
   '/index.html',
   '/pages/about.html',
   '/pages/portfolio.html',
   '/pages/contact.html',
-  '/blog/blog.html',
-  '/blog/ui-ux-deep-dive.html',
-  '/blog/Say-Goodbye-to-Hosting-Fees.html',
-  '/blog/building-better-websites.html',
-  
-  // New Project Detail Pages
-  '/pages/project-almanac.html',
-  '/pages/project-email-assist.html',
-  
   '/assets/css/style.css',
-  '/assets/js/particles-config.js',
+  '/assets/js/main.js',
   '/assets/images/logo.png',
   '/assets/images/danmillsheadshot.jpg',
+  '/manifest.json',
+
+  // Add new screenshot thumbnails to the cache
+  '/assets/images/almanac-thumb.png',
+  '/assets/images/dialogue-thumb.png',
+  '/assets/images/email-assist-thumb.png',
+  '/assets/images/mattsworld-thumb.png',
+  '/assets/images/pronunciation-thumb.png',
   '/assets/images/stocktoolthumb.png',
-  '/assets/images/ui-ux-thumbnail.png',
-  '/assets/images/user-centric-design-loop.png',
-  '/assets/images/wireframe-to-final-product.png',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
-  'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'
+  '/assets/images/tdanthumb.png',
+  
+  // PWA Icons
+  '/assets/images/favicon.ico',
+  '/assets/images/favicon-16x16.png',
+  '/assetsExamples/images/favicon-32x32.png',
+  '/assets/images/apple-touch-icon.png',
+  '/assets/images/android-chrome-192x192.png',
+  '/assets/images/android-chrome-512x512.png'
 ];
 
-// Install the service worker and cache the static assets
+// Install service worker
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache and caching assets');
+        console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
-      .then(() => {
-        // Force the new service worker to activate immediately
-        return self.skipWaiting();
-      })
-      .catch(error => {
-        console.error('Failed to cache assets during install:', error);
-      })
   );
 });
 
-// Serve cached content when offline, and update cache with new requests
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-        return fetch(event.request);
-      })
-  );
-});
-
-
-// Update the cache when a new service worker is activated
+// Activate service worker and clean up old caches
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
+        cacheNames.filter(cacheName => {
+          // Delete old caches that are not the current one
+          return cacheName.startsWith('danmills-portfolio-cache-') &&
+                 cacheName !== CACHE_NAME;
+        }).map(cacheName => {
+          return caches.delete(cacheName);
         })
       );
-    }).then(() => {
-      // Tell the active service worker to take control of the page immediately
-      return self.clients.claim();
     })
   );
 });
+
+// Fetch event (cache-first strategy)
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+
+        // Not in cache - fetch from network
+        return fetch(event.request).then(
+          response => {
+            // Check if we received a valid response
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            // IMPORTANT: Clone the response. A response is a stream
+            // and because we want the browser to consume the response
+            // as well as the cache consuming the response, we need
+            // to clone it so we have two streams.
+            const responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
+  );
+});
+

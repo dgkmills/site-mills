@@ -1,91 +1,98 @@
-// screenshot.js - Using External API for faster, cheaper builds.
+// This script runs during the Netlify build process to generate screenshots.
 
+// Using node-fetch v2, which works with the 'require' syntax.
+const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch'); // Required for HTTP requests in Node.js
 
-// IMPORTANT: SET THIS IN YOUR NETLIFY ENVIRONMENT VARIABLES FOR SECURITY
-const API_KEY = process.env.SCREENSHOTONE_API_KEY || 'YOUR_SCREENSHOT_API_KEY';
+/**
+ * Fetches a screenshot from ScreenshotOne API and saves it to a file.
+ * @param {string} url - The URL to screenshot.
+ * @param {string} imagePath - The full path to save the image file.
+ */
+const takeScreenshot = (url, imagePath) => {
+  // We wrap this in a Promise to use await, as streaming isn't natively await-able.
+  return new Promise((resolve, reject) => {
+    const apiKey = process.env.SCREENSHOTONE_API_KEY;
 
-// Define the pages to screenshot and where to save the images
-const screenshots = [
-    {
-        // Target: My Teacher Dan thumbnail (cropped to main content)
-        url: 'https://myteacherdan.com', 
-        filepath: path.join(__dirname, 'assets', 'images', 'tdanthumb.png'), 
-        options: { selector: '.main-container', quality: 90, viewport_width: 1280, viewport_height: 720 } 
-    },
-    {
-        // Target: Almanac Utility Tool thumbnail (Full-Page Scrolling)
-        url: 'https://almanac.danmills.dev', 
-        filepath: path.join(__dirname, 'assets', 'images', 'almanac-thumb.png'), 
-        options: { full_page: true, viewport_width: 1280, quality: 80 } // full_page handles scrolling
-    },
-    {
-        // Target: Email Assist AI thumbnail (Full-Page Scrolling)
-        url: 'https://email-assist.danmills.dev', 
-        filepath: path.join(__dirname, 'assets', 'images', 'email-assist-thumb.png'), 
-        options: { full_page: true, viewport_width: 1280, quality: 80 } // full_page handles scrolling
+    // Check if the API key is provided
+    if (!apiKey) {
+      console.error('SCREENSHOTONE_API_KEY environment variable is not set.');
+      return reject(new Error('Missing API key.'));
     }
+
+    // Construct the API URL
+    const apiUrl = `https://api.screenshotone.com/take?access_key=${apiKey}&url=${encodeURIComponent(url)}&full_page=true&block_cookie_banners=true&block_ads=true`;
+
+    console.log(`Fetching screenshot for: ${url}`);
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}: ${response.statusText}`);
+        }
+        
+        // Create a write stream to the target file path
+        const fileStream = fs.createWriteStream(imagePath);
+        
+        // Pipe the response body (the image) directly to the file
+        response.body.pipe(fileStream);
+
+        // Handle successful stream completion
+        fileStream.on('finish', () => {
+          console.log(`Successfully saved screenshot to: ${imagePath}`);
+          resolve();
+        });
+
+        // Handle errors during the stream
+        fileStream.on('error', (err) => {
+          console.error('File stream error:', err);
+          reject(err);
+        });
+      })
+      .catch(err => {
+        console.error(`Error fetching screenshot for ${url}:`, err);
+        reject(err);
+      });
+  });
+};
+
+// List of sites to screenshot
+const sites = [
+  { url: 'https://almanac.danmills.dev/', filename: 'almanac-thumb.png' },
+  { url: 'https://dialogue.danmills.dev/', filename: 'dialogue-thumb.png' },
+  { url: 'https://email-assist.danmills.dev/', filename: 'email-assist-thumb.png' },
+  { url: 'https://mattsworld.myteacherdan.com/', filename: 'mattsworld-thumb.png' },
+  { url: 'https://pronunciation.danmills.dev/', filename: 'pronunciation-thumb.png' },
+  { url: 'https://stocktool.danmills.dev/', filename: 'stocktoolthumb.png' },
+  { url: 'https://myteacherdan.com/', filename: 'tdanthumb.png' }
 ];
 
-async function generateScreenshot(targetUrl, options) {
-    const defaultParams = {
-        access_key: API_KEY,
-        url: targetUrl,
-        // Common parameters for a portfolio thumbnail
-        format: 'png',
-        // Default viewport/quality settings - overridden by specific options above
-        viewport_width: 1280,
-        viewport_height: 720,
-        delay: 3, // Wait 3 seconds for content to fully load
-        // Merge with custom options
-        ...options
-    };
+// Define the directory to save screenshots
+// '__dirname' refers to the current directory, which is your project root.
+const screenshotsDir = path.join(__dirname, 'assets', 'images');
 
-    // Construct the query string from parameters
-    const queryString = Object.keys(defaultParams)
-        .filter(key => defaultParams[key] !== undefined) // Exclude undefined properties
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(defaultParams[key])}`)
-        .join('&');
-
-    const apiUrl = `https://api.screenshotone.com/take?${queryString}`;
-    
-    // --- Fetch the screenshot image ---
-    const response = await fetch(apiUrl);
-
-    if (response.ok) {
-        return response.buffer();
-    } else {
-        const errorText = await response.text();
-        throw new Error(`Screenshot API Error (Status ${response.status}): ${errorText}`);
-    }
+// Ensure the directory exists
+if (!fs.existsSync(screenshotsDir)) {
+  fs.mkdirSync(screenshotsDir, { recursive: true });
 }
 
-async function runAutomation() {
-    if (API_KEY === 'YOUR_SCREENSHOT_API_KEY' || !API_KEY) {
-        console.warn("WARNING: SCREENSHOTONE_API_KEY is missing or is the placeholder. Skipping external API call.");
-        console.warn("Please set the 'SCREENSHOTONE_API_KEY' environment variable in Netlify.");
-        return; 
+// Main function to run the screenshots
+// Using an Immediately Invoked Function Expression (IIFE) to use async/await
+(async () => {
+  console.log('Starting screenshot generation process...');
+  
+  try {
+    // Loop through all sites and take screenshots sequentially
+    for (const site of sites) {
+      const imagePath = path.join(screenshotsDir, site.filename);
+      await takeScreenshot(site.url, imagePath);
     }
+    console.log('All screenshots generated successfully!');
+  } catch (error) {
+    console.error('Screenshot generation failed:', error);
+    // Exit with an error code to fail the build if screenshots fail
+    process.exit(1);
+  }
+})();
 
-    // Ensure the image directory exists
-    const imageDir = path.join(__dirname, 'assets', 'images');
-    if (!fs.existsSync(imageDir)) {
-        fs.mkdirSync(imageDir, { recursive: true });
-    }
-
-    for (const screenshot of screenshots) {
-        try {
-            console.log(`\nGenerating screenshot for: ${screenshot.url}`);
-            const imageBuffer = await generateScreenshot(screenshot.url, screenshot.options);
-            fs.writeFileSync(screenshot.filepath, imageBuffer);
-            console.log(`✅ Screenshot saved to: ${path.basename(screenshot.filepath)}`);
-        } catch (error) {
-            console.error(`❌ FAILED to generate screenshot for ${screenshot.url}:`, error.message);
-            // Don't re-throw the error, allow other screenshots to proceed and deploy the old images.
-        }
-    }
-}
-
-runAutomation();

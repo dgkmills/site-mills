@@ -1,12 +1,15 @@
 {
-  "name": "danmills-portfolio-builder",
+  "name": "danmills-portfolio",
   "version": "1.0.0",
-  "description": "Dependencies for Netlify build process (screenshots).",
-  "main": "screenshot.js",
+  "description": "Portfolio website for danmills.dev",
+  "main": "index.js",
   "scripts": {
-    "screenshot": "node screenshot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Dan Mills",
+  "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.7"
   }
 }
+

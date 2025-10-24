@@ -1,1 +1,34 @@
-This configuration file tells Netlify how to build and deploy your main site.It now runs the screenshot script before deploying the site.[build]This command installs the node-fetch dependency and runs the screenshot script.command = "npm install --production && node screenshot.js"publish = "."Form handling settings[build.processing]skip_processing = false[build.processing.css]bundle = trueminify = true[build.processing.js]bundle = trueminify = true[build.processing.html]pretty_urls = true[build.processing.images]compress = true
+# This configuration file tells Netlify how to build and deploy your main site.
+# It now runs the screenshot script before deploying the site.
+
+[build]
+  # This command installs production dependencies and runs the screenshot script.
+  command = "npm install --production && node screenshot.js"
+  # This sets the directory to publish after the build command finishes.
+  publish = "."
+
+# Settings for Netlify's built-in form handling
+# (If you are using Netlify Forms - if not, this section can be removed)
+# [[plugins]]
+#   package = "@netlify/plugin-functions-core" # Example if you use Netlify Functions
+
+# Asset Processing settings
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
+
+# Optional: You might want redirects, headers, etc.
+# Example:
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
