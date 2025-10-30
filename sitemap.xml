@@ -7,7 +7,7 @@
 
 <url>
   <loc>https://danmills.dev/index.html</loc>
-  <lastmod>2025-10-18T00:00:00+00:00</lastmod>
+  <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
@@ -17,7 +17,7 @@
 </url>
 <url>
   <loc>https://danmills.dev/pages/portfolio.html</loc>
-  <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -27,8 +27,13 @@
 </url>
 <url>
     <loc>https://danmills.dev/blog/blog.html</loc>
-    <lastmod>2025-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
     <priority>0.80</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/blog/obsidian-mind-map.html</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+    <priority>0.60</priority>
 </url>
 <url>
     <loc>https://danmills.dev/blog/ui-ux-deep-dive.html</loc>
@@ -42,10 +47,15 @@
 </url>
 <url>
     <loc>https://danmills.dev/blog/building-better-websites.html</loc>
-    <lastmod>2025-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
     <priority>0.60</priority>
 </url>
-<!-- NEW PROJECT DETAIL PAGES -->
+<!-- PROJECT DETAIL PAGES -->
+<url>
+    <loc>https://danmills.dev/pages/project-dr-kha.html</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
 <url>
     <loc>https://danmills.dev/pages/project-almanac.html</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
@@ -56,4 +66,40 @@
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
     <priority>0.70</priority>
 </url>
+<url>
+    <loc>https://danmills.dev/pages/project-stock-tool.html</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-teacher-dan.html</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-portal.html</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-aree.html</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-matts-world.html</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-dialogue-tool.html</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
+<url>
+    <loc>https://danmills.dev/pages/project-pronunciation-tool.html</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <priority>0.70</priority>
+</url>
 </urlset>
+

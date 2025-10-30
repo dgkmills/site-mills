@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Dan Mills Portfolio</title>
+    <meta name="description" content="A detailed look at the 'My Teacher Dan' student portal, a secure dashboard for students.">
+
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://danmills.dev/pages/project-portal.html" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo-link"><img src="/assets/images/logo.png" alt="Dan Mills Logo" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="/blog/blog.html">Blog</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section project-detail">
+            <h1>Student Portal (My Teacher Dan)</h1>
+            <img src="/assets/images/portalthumb.png" alt="Student Portal project thumbnail." class="project-detail-image"  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e1e1e/a0a0a0?text=Portal';">
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Full-Stack Developer
+                </div>
+                <div class="meta-item">
+                    <strong>Technologies:</strong> HTML, CSS, JavaScript, Firebase Authentication
+                </div>
+                <div class="meta-item">
+                     <a href="https://portal.myteacherdan.com" target="_blank" rel="noopener noreferrer" class="cta-button">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <h2>The Challenge</h2>
+            <p>The 'My Teacher Dan' website needed a secure, members-only area where enrolled students could log in to access their lesson materials, watch exclusive videos, and view their personalized dashboard. This required a robust authentication system and a dedicated front-end, separate from the public-facing site.</p>
+
+            <h2>My Solution</h2>
+            <p>I built a single-page application and secured it using Firebase Authentication. Students are given login credentials, and upon successful login, they are granted access to the portal. The portal itself is a dashboard that dynamically displays lessons, videos, and other resources. This provides a professional and secure learning environment for students, all while running on Firebase's free-tier "Spark Plan."</p>
+            
+            <a href="/pages/portfolio.html" class="back-to-blog">&larr; Back to Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -7,11 +7,11 @@
     <meta name="description" content="A collection of articles and insights on modern web development, UI/UX design, and technology from Dan Mills.">
 
     <link rel="canonical" href="https://danmills.dev/blog/blog.html" />
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    
+
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -41,7 +41,18 @@
             <p class="portfolio-intro">A collection of articles and insights on modern web development, UI/UX design, and the ever-evolving tech landscape.
             </p>
             <div class="blog-grid">
-                <!-- New UI/UX Post Card -->
+                 <!-- NEW: Obsidian Mind Map Post Card -->
+                 <div class="blog-card fade-in">
+                    <!-- Use one of the uploaded mindmap screenshots as thumbnail -->
+                    <img src="/assets/images/obsidian-mindmap-websites.png" alt="Obsidian mind map showing website hierarchy" class="blog-card-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e1e1e/a0a0a0?text=MindMap';">
+                    <div class="card-content">
+                        <h3>Visualizing Thoughts: Obsidian Mind Maps</h3>
+                        <p>Exploring how Obsidian's mind map feature helps organize complex web development projects and personal thoughts.</p>
+                        <a href="/blog/obsidian-mind-map.html" class="cta-button">Read More</a>
+                    </div>
+                </div>
+
+                <!-- UI/UX Post Card -->
                 <div class="blog-card fade-in">
                     <img src="/assets/images/ui-ux-thumbnail.png" alt="Abstract image representing user interface and user experience design." class="blog-card-image">
                     <div class="card-content">
@@ -78,18 +89,8 @@
         <p>&copy; 2025 Dan Mills | <a href="https://danmills.dev">danmills.dev</a></p>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <!-- Include main.js for potential fade-in script and header functionality -->
+     <script src="/assets/js/main.js"></script>
 </body>
 </html>
+
