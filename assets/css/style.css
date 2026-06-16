@@ -42,6 +42,58 @@ main {
     flex-grow: 1;
 }
 
+/* --- Global cursor-reactive wallpaper (injected by main.js) --- */
+.bg-fx {
+    --mx: 50%;
+    --my: 50%;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Dim dot grid across the whole page */
+.bg-fx::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+}
+
+/* Drifting aurora blobs */
+.bg-aurora {
+    position: absolute;
+    inset: -10%;
+    background:
+        radial-gradient(30% 40% at 20% 25%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%),
+        radial-gradient(30% 40% at 80% 30%, color-mix(in srgb, var(--accent-2) 26%, transparent), transparent 70%),
+        radial-gradient(40% 50% at 55% 90%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%);
+    filter: blur(90px) saturate(1.2);
+    animation: aurora-drift 24s ease-in-out infinite alternate;
+}
+
+/* Cursor-following spotlight: brightens grid dots + a soft glow */
+.bg-fx::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle, color-mix(in srgb, var(--accent-2) 50%, transparent) 1px, transparent 1px),
+        radial-gradient(260px 260px at var(--mx) var(--my), color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+    background-size: 30px 30px, 100% 100%;
+    -webkit-mask-image: radial-gradient(280px 280px at var(--mx) var(--my), #000 0%, transparent 70%);
+    mask-image: radial-gradient(280px 280px at var(--mx) var(--my), #000 0%, transparent 70%);
+}
+
+@keyframes aurora-drift {
+    0%   { transform: translate3d(-3%, -2%, 0) scale(1); }
+    50%  { transform: translate3d(3%, 2%, 0) scale(1.08); }
+    100% { transform: translate3d(4%, -3%, 0) scale(1.03); }
+}
+
 /* --- Typography --- */
 h1, h2, h3, h4 {
     line-height: 1.2;
@@ -159,116 +211,62 @@ nav .nav-links ul li a:hover::after {
 
 /* --- Hero Section --- */
 .hero {
-    --mx: 50%;
-    --my: 50%;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem 2rem;
-    background: radial-gradient(120% 120% at 50% 0%, #15151f 0%, var(--bg-color) 60%);
-    min-height: 70vh;
-    overflow: hidden;
+    padding: 4rem 2rem 5rem;
+    min-height: 80vh;
 }
 
-/* Layer 0: crossfading project-thumbnail slideshow (built by hero-fx.js) */
-.hero-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.hero-slide {
-    position: absolute;
-    inset: -6%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    filter: blur(9px) saturate(0.9);
-    transform: scale(1.12);
-    transition: opacity 1.6s ease-in-out;
-    animation: hero-kenburns 18s ease-in-out infinite alternate;
-}
-
-.hero-slide.is-active {
-    opacity: 0.32;
-}
-
-/* Dark scrim over the slideshow so hero text stays readable */
-.hero-slideshow::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(120% 120% at 50% 40%, rgba(10, 10, 15, 0.55) 0%, rgba(10, 10, 15, 0.88) 100%);
-}
-
-@keyframes hero-kenburns {
-    from { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
-    to   { transform: scale(1.2) translate3d(1.5%, 1%, 0); }
-}
-
-/* Layer 1: dim dot grid, faded toward the edges */
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px);
-    background-size: 28px 28px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 75%);
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 75%);
-    opacity: 0.5;
-}
-
-/* Layer 1: animated aurora glow (replaces particles.js) */
-#particles-js {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background:
-        radial-gradient(35% 45% at 22% 30%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 70%),
-        radial-gradient(35% 45% at 78% 35%, color-mix(in srgb, var(--accent-2) 35%, transparent), transparent 70%),
-        radial-gradient(45% 55% at 60% 80%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 70%);
-    filter: blur(70px) saturate(1.2);
-    animation: aurora-drift 20s ease-in-out infinite alternate;
-}
-
-@keyframes aurora-drift {
-    0%   { transform: translate3d(-4%, -2%, 0) scale(1); }
-    50%  { transform: translate3d(3%, 2%, 0) scale(1.08); }
-    100% { transform: translate3d(4%, -3%, 0) scale(1.03); }
-}
-
-/* Layer 2: cursor-following spotlight that lights up the grid + a soft glow */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-    background:
-        radial-gradient(circle, color-mix(in srgb, var(--accent-2) 55%, transparent) 1px, transparent 1px),
-        radial-gradient(200px 200px at var(--mx) var(--my), color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%);
-    background-size: 28px 28px, 100% 100%;
-    -webkit-mask-image: radial-gradient(220px 220px at var(--mx) var(--my), #000 0%, transparent 70%);
-    mask-image: radial-gradient(220px 220px at var(--mx) var(--my), #000 0%, transparent 70%);
-}
-
-/* Layer 3: hero content */
-.hero-text {
-    max-width: 800px;
-    position: relative;
-    z-index: 3;
-}
-
-.hero-text h1 {
+.hero h1 {
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+/* Visible crossfading project showcase (built by hero-fx.js) */
+.hero-showcase {
+    position: relative;
+    width: min(720px, 92%);
+    aspect-ratio: 3 / 2;
+    margin: 0.5rem auto 2.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border-color));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55),
+                0 0 40px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    animation: hero-kenburns 20s ease-in-out infinite alternate;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+}
+
+@keyframes hero-kenburns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.08); }
+}
+
+.hero-text {
+    max-width: 760px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-text p {

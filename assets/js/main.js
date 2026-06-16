@@ -70,6 +70,41 @@ if (intakeModalButton && intakeModal) {
 }
 
 
+// --- Global cursor-reactive background wallpaper (all pages) ---
+(function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const bg = document.createElement('div');
+    bg.className = 'bg-fx';
+    bg.setAttribute('aria-hidden', 'true');
+
+    const aurora = document.createElement('div');
+    aurora.className = 'bg-aurora';
+    bg.appendChild(aurora);
+
+    document.body.prepend(bg);
+
+    // Move the spotlight to follow the cursor (rAF-throttled, viewport-relative).
+    if (!reduceMotion) {
+        let pending = false;
+        let x = 50;
+        let y = 50;
+        window.addEventListener('pointermove', (e) => {
+            x = (e.clientX / window.innerWidth) * 100;
+            y = (e.clientY / window.innerHeight) * 100;
+            if (!pending) {
+                pending = true;
+                requestAnimationFrame(() => {
+                    bg.style.setProperty('--mx', x + '%');
+                    bg.style.setProperty('--my', y + '%');
+                    pending = false;
+                });
+            }
+        });
+    }
+})();
+
+
 // --- Hamburger Menu Functionality ---
 const hamburger = document.querySelector('.hamburger-menu');
 const navLinks = document.querySelector('.nav-links');
