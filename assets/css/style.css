@@ -1,18 +1,24 @@
-/* --- Google Font Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+/* --- Google Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* --- CSS Variables for easy theme management --- */
 :root {
-    --bg-color: #121212;
-    --surface-color: #1e1e1e;
-    --primary-color: #bb86fc;
-    --primary-variant-color: #3700b3;
-    --secondary-color: #03dac6;
-    --on-surface-color: #e0e0e0;
-    --on-surface-secondary-color: #a0a0a0;
-    --border-color: #2c2c2c;
+    /* Brand identity */
+    --accent: #7c5cff;
+    --accent-2: #00d4ff;
+    --gradient: linear-gradient(120deg, var(--accent), var(--accent-2));
+
+    --bg-color: #0a0a0f;
+    --surface-color: #14141c;
+    --primary-color: var(--accent);
+    --primary-variant-color: #2a2150;
+    --secondary-color: var(--accent-2);
+    --on-surface-color: #e8e8f0;
+    --on-surface-secondary-color: #9a9ab0;
+    --border-color: #26263a;
     --shadow-color: rgba(0, 0, 0, 0.5);
     --font-family: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* --- Global Styles & Resets --- */
@@ -44,15 +50,17 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2.25rem, 6vw, 4rem);
     font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 2.25rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 h3 {
@@ -157,24 +165,55 @@ nav .nav-links ul li a:hover::after {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #1a1a1a, #121212);
-    min-height: 60vh;
+    background: radial-gradient(120% 120% at 50% 0%, #15151f 0%, var(--bg-color) 60%);
+    min-height: 70vh;
     overflow: hidden;
 }
 
+/* Subtle dot grid, faded toward the edges */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 75%);
+    opacity: 0.6;
+}
+
+/* Animated aurora blobs (replaces particles.js) */
 #particles-js {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 0;
+    background:
+        radial-gradient(35% 45% at 22% 30%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 70%),
+        radial-gradient(35% 45% at 78% 35%, color-mix(in srgb, var(--accent-2) 35%, transparent), transparent 70%),
+        radial-gradient(45% 55% at 60% 80%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 70%);
+    filter: blur(70px) saturate(1.2);
+    animation: aurora-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+    0%   { transform: translate3d(-4%, -2%, 0) scale(1); }
+    50%  { transform: translate3d(3%, 2%, 0) scale(1.08); }
+    100% { transform: translate3d(4%, -3%, 0) scale(1.03); }
 }
 
 .hero-text {
     max-width: 800px;
     position: relative;
     z-index: 1;
+}
+
+.hero-text h1 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
 }
 
 .hero-text p {
@@ -188,24 +227,23 @@ nav .nav-links ul li a:hover::after {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
     text-align: center;
 }
 
 .cta-button {
-    background-color: var(--primary-color);
-    color: #000;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    background: var(--gradient);
+    color: #07070b;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .cta-button:hover {
-    background-color: var(--secondary-color);
-    color: #000;
     transform: translateY(-2px);
+    box-shadow: 0 8px 26px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 .secondary-button {
@@ -309,7 +347,8 @@ nav .nav-links ul li a:hover::after {
 
 .portfolio-card:hover, .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-color);
+    box-shadow: 0 8px 24px var(--shadow-color);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border-color));
 }
 
 .portfolio-image, .blog-card-image {
@@ -342,11 +381,13 @@ nav .nav-links ul li a:hover::after {
 }
 
 .tech-stack span {
-    background-color: var(--primary-variant-color);
-    color: var(--on-surface-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent-2);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
     font-weight: 500;
 }
 
@@ -398,11 +439,17 @@ nav .nav-links ul li a:hover::after {
     font-size: 0.9rem;
 }
 
+.meta-item strong {
+    font-family: var(--font-mono);
+    color: var(--on-surface-color);
+    font-weight: 600;
+}
+
 .post-meta {
-    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     color: var(--on-surface-secondary-color);
     margin-bottom: 1rem;
-    font-style: italic;
 }
 
 .back-to-blog {
@@ -579,6 +626,28 @@ nav .nav-links ul li a:hover::after {
 @keyframes fadeIn {
     from {opacity: 0; transform: scale(0.95);}
     to {opacity: 1; transform: scale(1);}
+}
+
+
+/* --- Accessibility & polish --- */
+:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+::selection {
+    background: color-mix(in srgb, var(--accent) 40%, transparent);
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 

@@ -72,7 +72,8 @@ const sites = [
   { url: 'https://pronunciation.danmills.dev/', filename: 'pronunciation-thumb.png' },
   { url: 'https://email-assist.danmills.dev/', filename: 'email-assist-thumb.png' },
   { url: 'https://mattsworld.myteacherdan.com/', filename: 'mattsworld-thumb.png' },
-  { url: 'https://aree.myteacherdan.com/', filename: 'areethumb.png' }
+  { url: 'https://aree.myteacherdan.com/', filename: 'areethumb.png' },
+  { url: 'https://yumwabanpong.com/', filename: 'yumwabanpong-thumb.png' }
 ];
 
 // Define the directory to save screenshots
