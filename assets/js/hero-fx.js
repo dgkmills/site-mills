@@ -7,20 +7,15 @@
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Project thumbnails (kept in sync with screenshot.js). Missing files just
+    // Project thumbnails: the three case studies first. Missing files just
     // don't paint, since these are CSS background-images.
     const thumbnails = [
-        'tdanthumb.png',
-        'portalthumb.png',
+        'workplace-english-thumb.jpg',
+        'yumwabanpong-thumb.jpg',
+        'farmthumb.jpg',
         'drkhathumb.png',
-        'stocktoolthumb.png',
-        'almanac-thumb.png',
-        'dialogue-thumb.png',
-        'pronunciation-thumb.png',
-        'email-assist-thumb.png',
-        'mattsworld-thumb.png',
         'areethumb.png',
-        'yumwabanpong-thumb.png'
+        'mattsworld-thumb.png'
     ];
 
     const slides = thumbnails.map((name, i) => {
