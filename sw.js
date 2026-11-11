@@ -1,6 +1,6 @@
 // This is your service worker file.
 
-const CACHE_NAME = 'danmills-portfolio-cache-v4'; // Incremented cache version
+const CACHE_NAME = 'danmills-portfolio-cache-v5'; // v5: myteacherdan.com case study (12 Nov 2026)
 const urlsToCache = [
   '/',
   '/index.html',
@@ -24,6 +24,7 @@ const urlsToCache = [
   '/pages/project-email-assist.html',
   '/pages/project-stock-tool.html',
   '/pages/project-teacher-dan.html',
+  '/pages/project-teacherdan-site.html',
   '/pages/project-portal.html', // ADDED
   '/pages/project-aree.html', // ADDED
   '/pages/project-matts-world.html',

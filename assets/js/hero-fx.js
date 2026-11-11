@@ -7,9 +7,10 @@
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Project thumbnails: the three case studies first. Missing files just
+    // Project thumbnails: the four case studies first. Missing files just
     // don't paint, since these are CSS background-images.
     const thumbnails = [
+        'teacherdan-site-thumb.jpg',
         'workplace-english-thumb.jpg',
         'yumwabanpong-thumb.jpg',
         'farmthumb.jpg',
